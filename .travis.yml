@@ -4,10 +4,11 @@ services:
 
 script:
   - docker build -t sid7631/node .
+  - docker tag node sid7631/node 
   - docker images sid7631/node
 
 before_deploy:
-  - docker login -u sid7631 -p "hazgi0-wucruG-dukxac"
+  - docker login -u sid7631 -p hazgi0-wucruG-dukxac
 
 deploy:
   provider: script
